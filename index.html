@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-right: 40px;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar ul li {
+            display: inline;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .navbar ul li a:hover {
+            color: #1e90ff;
+        }
+
+        /* Header styles */
+        .header {
+            background: linear-gradient(90deg, #1e90ff, #6a5acd);
+            color: white;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #1e90ff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .course-card {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course-info {
+            padding: 20px;
+        }
+
+        .course-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .course-info p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .course-info button {
+            padding: 10px 20px;
+            background-color: #1e90ff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .course-info button:hover {
+            background-color: #555;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .back-to-top {
+            margin-top: 20px;
+            color: #1e90ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Section -->
+    <div class="logo" style=" justify-content: flex-start;"></div>
+    <nav class="navbar">
+        <div class="logo">Navbar</div>
+        <ul>
+            <li><a onclick="showPopup('Home')">Home</a></li>
+            <li><a onclick="showPopup('About')">About</a></li>
+            <li><a onclick="showPopup('Blog')">Blog</a></li>
+            <li><a onclick="showPopup('Contact')">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header class="header">
+        <h1>Title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus mi, egestas et imperdiet quis, tristique non mi.</p>
+        <button class="btn">Read More</button>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">Classes</h2>
+        <p style="text-align: center; margin-bottom: 40px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas risus mi, egestas et imperdiet quis, tristique non mi.</p>
+
+        <div class="grid-container">
+            <!-- Course Cards Start -->
+            <!-- Add Course Cards Here from JSON data -->
+        </div>
+    </div>
+
+    <footer class="footer">
+        Copyright © 2021. All Rights Reserved.
+        <br>
+        <a href="#" class="back-to-top">Back to top</a>
+    </footer>
+
+    <!-- Simple popup alert -->
+    <script>
+        function showPopup(linkName) {
+            alert("You clicked on the " + linkName + " link.");
+        }
+
+        const courses = [
+            {
+                "ID": "BasicTechnicalWriting",
+                "ImageUrl": "https://metapercept.com/images/training-certification/Basic-DITA%E2%80%93XML.jpg",
+                "Name": "Basic Technical Writing",
+                "ShortDesc": "This course focuses on understanding the basics of technical writing and developing technical writing skills."
+            },
+            {
+                "ID": "ConfluenceAdvanced",
+                "ImageUrl": "https://metapercept.com/images/training-certification/Advanced-DITA–XML.jpg",
+                "Name": "Confluence Advanced",
+                "ShortDesc": "This course focuses to ensure your documentation-type content is easy to manage and consume."
+            },
+            {
+                "ID": "ConfluenceBasic",
+                "ImageUrl": "images/training-certification/Authoring-Tools.jpg",
+                "Name": "Confluence Basic",
+                "ShortDesc": "This course guides end users to create their own easy-to-use and well-formatted content."
+            },
+            {
+                "ID": "XMLAuthor",
+                "ImageUrl": "images/training-certification/Simplified-Technical-English.jpg",
+                "Name": "XML Author",
+                "ShortDesc": "This course deepens the knowledge in XML Author, in any industry."
+            },
+            {
+                "ID": "AdvancedTechnicalWriting-API",
+                "ImageUrl": "images/training-certification/Technical-Writing.jpg",
+                "Name": "Advanced Technical Writing - API",
+                "ShortDesc": "This course focuses on deepening the knowledge of technical content deliverables."
+            },
+            {
+                "ID": "BasicDITA-XML",
+                "ImageUrl": "images/training-certification/Authoring-Tools.jpg",
+                "Name": "Basic DITA-XML",
+                "ShortDesc": "This course focuses on individuals keen to broaden their knowledge of DITA-XML."
+            },
+            {
+                "ID": "AdvancedDITA-XML",
+                "ImageUrl": "images/training-certification/Basic-DITA–XML.jpg",
+                "Name": "Advanced DITA-XML",
+                "ShortDesc": "This course focuses on individuals keen to specialize in advanced DITA-XML."
+            },
+            {
+                "ID": "xMetaLAuthor",
+                "ImageUrl": "images/training-certification/Advanced-DITA–XML.jpg",
+                "Name": "xMetaL Author",
+                "ShortDesc": "Learn xMetaL for XML-based authoring to manage structured content development."
+            },
+            {
+                "ID": "MadCapFlare",
+                "ImageUrl": "images/training-certification/Technical-Writing.jpg",
+                "Name": "MadCap Flare",
+                "ShortDesc": "This course develops technical writing skills for using MadCap Flare."
+            }
+        ];
+
+        const gridContainer = document.querySelector('.grid-container');
+
+        courses.forEach(course => {
+            const courseCard = document.createElement('div');
+            courseCard.classList.add('course-card');
+
+            courseCard.innerHTML = `
+                <img src="${course.ImageUrl}" alt="${course.Name}">
+                <div class="course-info">
+                    <h3>${course.Name}</h3>
+                    <p>${course.ShortDesc}</p>
+                    <button>View</button>
+                </div>
+            `;
+
+            gridContainer.appendChild(courseCard);
+
+            // Add click event listener to each button
+            courseCard.querySelector('button').addEventListener('click', () => {
+                alert(`You clicked on ${course.Name}`);
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px 
+        
+
+[Message clipped]  View entire message
+        }
